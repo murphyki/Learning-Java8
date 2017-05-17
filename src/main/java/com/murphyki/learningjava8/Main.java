@@ -12,6 +12,7 @@ package com.murphyki.learningjava8;
 public class Main {
     public static void main(String[] args) {
         //ForEachExamples.runExamples(args);
-        ExecutorServiceExamples.runExamples(args);
+        //ExecutorServiceExamples.runExamples(args);
+        AtomicVariablesAndLocksExamples.runExamples(args);
     }
 }

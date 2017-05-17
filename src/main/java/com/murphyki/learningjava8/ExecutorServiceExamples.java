@@ -67,7 +67,7 @@ public class ExecutorServiceExamples {
             String threadName = Thread.currentThread().getName();
             System.out.println("executorSubmitExample -> hello " + threadName);
         });
-        stopExecutor(executor);
+        Utils.stopExecutor(executor);
     }
 
     private void executorCallableExample() {
@@ -90,8 +90,7 @@ public class ExecutorServiceExamples {
             Logger.getLogger(ExecutorServiceExamples.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             System.out.println("future done? " + result.isDone());
-
-            stopExecutor(executor);
+            Utils.stopExecutor(executor);
         }
     }
 
@@ -117,24 +116,8 @@ public class ExecutorServiceExamples {
         } catch (InterruptedException ex) {
             Logger.getLogger(ExecutorServiceExamples.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            stopExecutor(executor);
+            Utils.stopExecutor(executor);
         }
 
-    }
-
-    private void stopExecutor(ExecutorService executor) {
-        try {
-            System.out.println("attempt to shutdown executor");
-            executor.shutdown();
-            executor.awaitTermination(5, TimeUnit.SECONDS);
-        } catch (InterruptedException ex) {
-            System.err.println("tasks interrupted");
-        } finally {
-            if (!executor.isTerminated()) {
-                System.err.println("cancel non-finished tasks");
-            }
-            executor.shutdownNow();
-            System.out.println("shutdown finished");
-        }
     }
 }
