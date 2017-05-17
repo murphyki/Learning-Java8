@@ -29,9 +29,9 @@ public class AtomicVariablesAndLocksExamples {
     public static void runExamples(String[] args) {
         AtomicVariablesAndLocksExamples ex = new AtomicVariablesAndLocksExamples();
 
-        //ex.atomicIntegerExample();
-        //ex.lockExample();
-        //ex.readWriteLockExample();
+        ex.atomicIntegerExample();
+        ex.lockExample();
+        ex.readWriteLockExample();
         ex.semaphoreExample();
     }
 
