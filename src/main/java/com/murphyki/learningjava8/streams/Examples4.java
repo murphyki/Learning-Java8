@@ -3,22 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.murphyki.learningjava8;
+package com.murphyki.learningjava8.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  *
  * @author kieran
  */
-public class ForEachExamples {
+public class Examples4 {
 
-    public static void runExamples(String[] args) {
+    public static void main(String[] args) {
         // forEach example.. here uses Map, also available on ArrayList
         Map<String, Integer> items = new HashMap<>();
         items.put("A", 10);
@@ -39,34 +38,35 @@ public class ForEachExamples {
         
         // Streams Examples...
         List<String> lines = Arrays.asList("spring", "node", "mkyong");
-        List<String> result1 = new ArrayList<>();
+        List<String> result = new ArrayList<>();
         
         //for (String line : lines) {
         //    if (!"mkyong".equals(line)) { // we dont like mkyong
-        //        result1.add(line);
+        //        result.add(line);
         //    }
         //}
         
         lines.forEach((line) -> {
             if (!"mkyong".equals(line)) { // we dont like mkyong
-                result1.add(line);
+                result.add(line);
             }
         });
         
         // Use streams...
-        List<String> result2 = lines.stream()
-                .filter(line -> !"mkyong".equals(line))
-                .collect(Collectors.toList());
+//        result = lines.stream()
+//                .filter(line -> !"mkyong".equals(line))
+//                .collect(Collectors.toList());
         
         //for (String temp : result) {
         //    System.out.println(temp);    //output : spring, node
         //}
         
-        result2.forEach((item) -> {
+        result.forEach((item) -> {
             System.out.println(item);    //output : spring, node
         });
         
-        result2.forEach(System.out::println); // method reference
- 
+        result.forEach(System.out::println); // method reference
+  
+        
     }
 }
