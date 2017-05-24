@@ -11,8 +11,5 @@ package com.murphyki.learningjava8;
  */
 public class Main {
     public static void main(String[] args) {
-        com.murphyki.learningjava8.foreach.Examples.runExamples(args);
-        com.murphyki.learningjava8.executorservice.Examples.runExamples(args);
-        com.murphyki.learningjava8.atomicvariablesandlocks.Examples.runExamples(args);
     }
 }

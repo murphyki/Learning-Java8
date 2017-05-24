@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class Examples {
 
-    public static void runExamples(String[] args) {
+    public static void main(String[] args) {
         Examples ex = new Examples();
         ex.oldRunnableWay();
         ex.newRunnableWay();

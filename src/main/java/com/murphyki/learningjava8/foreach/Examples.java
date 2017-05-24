@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  */
 public class Examples {
 
-    public static void runExamples(String[] args) {
+    public static void main(String[] args) {
         // forEach example.. here uses Map, also available on ArrayList
         Map<String, Integer> items = new HashMap<>();
         items.put("A", 10);
